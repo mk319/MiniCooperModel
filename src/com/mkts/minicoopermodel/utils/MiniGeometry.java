@@ -21,7 +21,7 @@ class PartEntry
 	public int end;
 }
 
-public class mini_geometry {
+public class MiniGeometry {
 
 	private int _numVertices;
 	
@@ -32,7 +32,7 @@ public class mini_geometry {
 	private short _indices;
 	
 	
-	public mini_geometry(Context context) {
+	public MiniGeometry(Context context) {
 		// TODO Auto-generated constructor stub
 		
 		String filename;
