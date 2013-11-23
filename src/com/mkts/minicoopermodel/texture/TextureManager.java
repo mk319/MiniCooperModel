@@ -6,7 +6,7 @@ import android.util.SparseArray;
 //this texture manager is used to create textures on demand
 //if a already created texture is requested the manager returns it
 //instead of creating a new one
-
+/*
 public class TextureManager {
 	
 	// textures are indexed by their resource value
@@ -23,3 +23,4 @@ public class TextureManager {
     	return newTexture;
     }
 }
+*/

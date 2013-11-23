@@ -1,6 +1,6 @@
 package com.mkts.minicoopermodel;
 
-
+/*
 import com.mkts.minicoopermodel.shader.ShaderManager;
 import com.mkts.minicoopermodel.texture.TextureManager;
 
@@ -33,3 +33,4 @@ public class GLApplication extends Application {
 		tm = new TextureManager();
 	}
 }
+*/

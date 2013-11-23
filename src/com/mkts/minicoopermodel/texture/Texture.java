@@ -12,7 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
-
+/*
 public class Texture {
 	// OpenGL ID for the texture
 	private int glID;
@@ -78,3 +78,4 @@ public class Texture {
 		return buffer;
 	}
 }
+*/
