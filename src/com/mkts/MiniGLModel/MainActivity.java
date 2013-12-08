@@ -1,10 +1,11 @@
-package com.example.gles20bull;
+package com.mkts.MiniGLModel;
 
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.Window;
+import com.mkts.MiniGLModel.R;
 
 public class MainActivity extends Activity {
 	

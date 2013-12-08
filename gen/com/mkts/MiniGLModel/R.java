@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.gles20bull;
+package com.mkts.MiniGLModel;
 
 public final class R {
     public static final class attr {

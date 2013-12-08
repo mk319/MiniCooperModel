@@ -1,4 +1,4 @@
-package com.example.gles20bull;
+package com.mkts.MiniGLModel;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;

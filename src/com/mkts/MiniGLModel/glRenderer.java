@@ -1,4 +1,4 @@
-package com.example.gles20bull;
+package com.mkts.MiniGLModel;
 
 import java.io.FileNotFoundException;
 
@@ -11,7 +11,7 @@ import android.opengl.GLSurfaceView.Renderer;
 import android.opengl.Matrix;
 import android.util.Log;
 
-import com.example.gles20bull.shapes.Mini;
+import com.mkts.MiniGLModel.shapes.Mini;
 
 public class glRenderer implements Renderer {
 	Context context;

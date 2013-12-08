@@ -1,4 +1,4 @@
-package com.example.gles20bull.utils;
+package com.mkts.MiniGLModel.utils;
 
 public class PartEntry {
 	public String name;

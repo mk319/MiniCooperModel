@@ -1,4 +1,4 @@
-package com.example.gles20bull.shapes;
+package com.mkts.MiniGLModel.shapes;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -7,7 +7,7 @@ import java.nio.FloatBuffer;
 import android.content.Context;
 import android.opengl.GLES20;
 
-import com.example.gles20bull.glRenderer;
+import com.mkts.MiniGLModel.glRenderer;
 
 public class Cube {
 	Context context;

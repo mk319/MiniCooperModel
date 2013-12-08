@@ -1,10 +1,10 @@
-package com.example.gles20bull.shapes;
+package com.mkts.MiniGLModel.shapes;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-import com.example.gles20bull.glRenderer;
+import com.mkts.MiniGLModel.glRenderer;
 
 import android.opengl.GLES20;
 

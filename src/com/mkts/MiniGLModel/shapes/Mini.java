@@ -1,4 +1,4 @@
-package com.example.gles20bull.shapes;
+package com.mkts.MiniGLModel.shapes;
 
 import java.io.FileNotFoundException;
 import java.nio.ByteBuffer;
@@ -14,10 +14,10 @@ import android.graphics.Matrix;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 
-import com.example.gles20bull.R;
-import com.example.gles20bull.glRenderer;
-import com.example.gles20bull.utils.PartEntry;
-import com.example.gles20bull.utils.miniGeometry;
+import com.mkts.MiniGLModel.R;
+import com.mkts.MiniGLModel.glRenderer;
+import com.mkts.MiniGLModel.utils.PartEntry;
+import com.mkts.MiniGLModel.utils.miniGeometry;
 
 public class Mini {
 	Context context;
@@ -106,17 +106,17 @@ public class Mini {
 
 	// Array for each mini part and its color
 	public ColorEntry colorMap[] = {
-			new ColorEntry("Body", 0.05f, 0.05f, 0.54f),
-			new ColorEntry("Body Chrome", 0.95f, 0.96f, 0.93f),
-			new ColorEntry("Roof", 0.85f, 0.85f, 0.85f),
-			new ColorEntry("Headlights", 0.95f, 0.96f, 0.93f),
-			new ColorEntry("Mirrors", 0.85f, 0.85f, 0.85f),
-			new ColorEntry("Brakelights", 0.54f, 0.22f, 0.22f),
-			new ColorEntry("Undercarriage", 0.2f, 0.2f, 0.2f),
-			new ColorEntry("Antenna", 0.2f, 0.2f, 0.2f),
-			new ColorEntry("Driver Blinker", 0.9f, 0.5f, 0.1f),
-			new ColorEntry("Passenger Blinker", 0.9f, 0.5f, 0.1f),
-			new ColorEntry("Exhaust", 0.95f, 0.96f, 0.93f),
+			//new ColorEntry("Body", 0.05f, 0.05f, 0.54f),
+			//new ColorEntry("Body Chrome", 0.95f, 0.96f, 0.93f),
+			//new ColorEntry("Roof", 0.85f, 0.85f, 0.85f),
+			//new ColorEntry("Headlights", 0.95f, 0.96f, 0.93f),
+			//new ColorEntry("Mirrors", 0.85f, 0.85f, 0.85f),
+			//new ColorEntry("Brakelights", 0.54f, 0.22f, 0.22f),
+			//new ColorEntry("Undercarriage", 0.2f, 0.2f, 0.2f),
+			//new ColorEntry("Antenna", 0.2f, 0.2f, 0.2f),
+			//new ColorEntry("Driver Blinker", 0.9f, 0.5f, 0.1f),
+			//new ColorEntry("Passenger Blinker", 0.9f, 0.5f, 0.1f),
+			//new ColorEntry("Exhaust", 0.95f, 0.96f, 0.93f),
 			new ColorEntry("Upper Driver Wiper", 0.2f, 0.2f, 0.2f),
 			new ColorEntry("Upper Passenger Wiper", 0.2f, 0.2f, 0.2f),
 			new ColorEntry("Lower Driver Wiper", 0.2f, 0.2f, 0.2f),
@@ -133,11 +133,11 @@ public class Mini {
 			new ColorEntry("Rear Driver Tire", 0.1f, 0.1f, 0.1f),
 			new ColorEntry("Rear Passenger Tire", 0.1f, 0.1f, 0.1f),
 			new ColorEntry("Brakes", 0.75f, 0.75f, 0.75f),
-			new ColorEntry("Rear View Mirror", 0.8f, 0.8f, 0.8f),
-			new ColorEntry("Interior", 0.4f, 0.4f, 0.0f),
-			new ColorEntry("Driver", 0.9f, 0.9f, 0.9f),
-			new ColorEntry("Chair", 0.55f, 0.27f, 0.075f),
-			new ColorEntry("Windows", 0.5f, 0.5f, 0.5f)
+			//new ColorEntry("Rear View Mirror", 0.8f, 0.8f, 0.8f),
+			//new ColorEntry("Interior", 0.4f, 0.4f, 0.0f),
+			//new ColorEntry("Driver", 0.9f, 0.9f, 0.9f),
+			//new ColorEntry("Chair", 0.55f, 0.27f, 0.075f),
+			//new ColorEntry("Windows", 0.5f, 0.5f, 0.5f)
 	};
 
 	public Mini(Context context) throws FileNotFoundException {
@@ -238,16 +238,11 @@ public class Mini {
 			String name = entry.name;
 			
 			// Decide whether to use the texture or not
-			if(name.equals("Windows") || name.equals("Upper Driver Wiper") ||
-			   name.equals("Upper Passenger Wiper") || name.equals("Lower Driver Wiper") ||
-			   name.equals("Lower Passenger Wiper") || name.equals("Rear Wiper") ||
+			if(name.equals("Windows") || name.contains("Wiper") ||
 			   name.equals("Vents") || name.equals("License") || name.equals("Brakes") ||
 			   name.equals("Rear View Mirror") || name.equals("Interior") ||
-			   name.equals("Driver") || name.equals("Chair") || name.equals("Front Driver Rim") ||
-			   name.equals("Front Passenger Rim") || name.equals("Rear Driver Rim") ||
-			   name.equals("Rear Passenger Rim") || name.equals("Front Driver Tire") ||
-			   name.equals("Front Passenger Tire") || name.equals("Rear Driver Tire") ||
-			   name.equals("Rear Passenger Tire")) 
+			   name.equals("Driver") || name.equals("Chair") || name.contains("Rim")|| 
+			   name.contains("Tire")) 
 			{
 				GLES20.glUniform1i(mUseTextureHandle, 0);
 			} else {
@@ -257,11 +252,11 @@ public class Mini {
 			int offset = 2 * miniModel.getIndicesPerFace() * entry.start;
 			int count = miniModel.getIndicesPerFace() * (entry.end - entry.start);
 
-			for(int k = 0; k < 32; k++) {
-				if(name.equals(colorMap[i].part)) {
-					color[0] = colorMap[i].color[0];
-					color[1] = colorMap[i].color[1];	
-					color[2] = colorMap[i].color[2];
+			for(int k = 0; k < colorMap.length; k++) {
+				if(name.equals(colorMap[k].part)) {
+					color[0] = colorMap[k].color[0];
+					color[1] = colorMap[k].color[1];	
+					color[2] = colorMap[k].color[2];
 					color[3] = 1.0f;
 				}
 			}

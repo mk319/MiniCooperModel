@@ -1,4 +1,4 @@
-package com.example.gles20bull.utils;
+package com.mkts.MiniGLModel.utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.util.Log;
 
 public class miniGeometry {
 	
@@ -34,7 +33,7 @@ public class miniGeometry {
 		String[] tempArray;
 		
 		try {
-			int rId = context.getResources().getIdentifier("com.example.gles20bull:raw/"+"mini_geometry", null, null);
+			int rId = context.getResources().getIdentifier("com.mkts.MiniGLModel:raw/"+"mini_geometry", null, null);
 			BufferedReader in = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(rId)));
 			temp = in.readLine().trim();
 			_numVertices = Integer.parseInt(temp);
