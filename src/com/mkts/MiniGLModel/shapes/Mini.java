@@ -106,17 +106,6 @@ public class Mini {
 
 	// Array for each mini part and its color
 	public ColorEntry colorMap[] = {
-			//new ColorEntry("Body", 0.05f, 0.05f, 0.54f),
-			//new ColorEntry("Body Chrome", 0.95f, 0.96f, 0.93f),
-			//new ColorEntry("Roof", 0.85f, 0.85f, 0.85f),
-			//new ColorEntry("Headlights", 0.95f, 0.96f, 0.93f),
-			//new ColorEntry("Mirrors", 0.85f, 0.85f, 0.85f),
-			//new ColorEntry("Brakelights", 0.54f, 0.22f, 0.22f),
-			//new ColorEntry("Undercarriage", 0.2f, 0.2f, 0.2f),
-			//new ColorEntry("Antenna", 0.2f, 0.2f, 0.2f),
-			//new ColorEntry("Driver Blinker", 0.9f, 0.5f, 0.1f),
-			//new ColorEntry("Passenger Blinker", 0.9f, 0.5f, 0.1f),
-			//new ColorEntry("Exhaust", 0.95f, 0.96f, 0.93f),
 			new ColorEntry("Upper Driver Wiper", 0.2f, 0.2f, 0.2f),
 			new ColorEntry("Upper Passenger Wiper", 0.2f, 0.2f, 0.2f),
 			new ColorEntry("Lower Driver Wiper", 0.2f, 0.2f, 0.2f),
@@ -133,11 +122,6 @@ public class Mini {
 			new ColorEntry("Rear Driver Tire", 0.1f, 0.1f, 0.1f),
 			new ColorEntry("Rear Passenger Tire", 0.1f, 0.1f, 0.1f),
 			new ColorEntry("Brakes", 0.75f, 0.75f, 0.75f),
-			//new ColorEntry("Rear View Mirror", 0.8f, 0.8f, 0.8f),
-			//new ColorEntry("Interior", 0.4f, 0.4f, 0.0f),
-			//new ColorEntry("Driver", 0.9f, 0.9f, 0.9f),
-			//new ColorEntry("Chair", 0.55f, 0.27f, 0.075f),
-			//new ColorEntry("Windows", 0.5f, 0.5f, 0.5f)
 	};
 
 	public Mini(Context context) throws FileNotFoundException {

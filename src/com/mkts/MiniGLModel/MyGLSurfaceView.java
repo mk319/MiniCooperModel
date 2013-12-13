@@ -17,6 +17,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
 		super(context);
 		
 		setEGLContextClientVersion(2);		
+		setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
 		
 		myRenderer = new glRenderer(context);
 		setRenderer(myRenderer);
@@ -27,7 +28,8 @@ public class MyGLSurfaceView extends GLSurfaceView {
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		mScaleDetector.onTouchEvent(event);
+		//ScaleDetector listens to every event
+		mScaleDetector.onTouchEvent(event); 
 		final int action = event.getAction();
 		switch (action & MotionEvent.ACTION_MASK) {
 		case MotionEvent.ACTION_DOWN: {
@@ -43,18 +45,21 @@ public class MyGLSurfaceView extends GLSurfaceView {
 			touchedY = event.getY();
 			break;
 		}		
-		
 	}
 		return true;
 	}
-	
+	//Listener class for pinch to zoom
 	private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+	    final float MAX_SCALE = 2.0f;
+	    final float MIN_SCALE = 0.2f;
+	    
 	    @Override
 	    public boolean onScale(ScaleGestureDetector detector) {
-	        mScaleFactor *= detector.getScaleFactor();
+	        //gets the scale factor for pinch to zoom
+	    	mScaleFactor *= detector.getScaleFactor();
 	        
 	        // Don't let the object get too small or too large.
-	        mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 2.5f));
+	        mScaleFactor = Math.max(MIN_SCALE, Math.min(mScaleFactor, MAX_SCALE));
 
 	        invalidate();
 	        myRenderer.scale = mScaleFactor;
